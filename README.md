@@ -1,3 +1,5 @@
+This repository is the project requirement file for our project sports and fitness workout management web application.
+
 # Final
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
