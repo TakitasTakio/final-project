@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth/auth.service';
+import {Auth2Service} from '../auth/auth2.service';
 
 
 @Component({
@@ -10,8 +11,10 @@ import {AuthService} from '../auth/auth.service';
 export class LoginComponent implements OnInit {
 
   constructor(public auth: AuthService,
+              public auth2: Auth2Service,
               ) {
     auth.handleAuthentication();
+    auth2.handleAuthentication()
 
   }
 

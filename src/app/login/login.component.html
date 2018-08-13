@@ -1,24 +1,78 @@
 <div class="jumbotron container-fluid image" style="height:100vh;">
   <div class="text-center">
   <h1 class="text-center font-weight-light" style="color: black">Hello, Amino Planet</h1>
-    <i class="fas fa-users fa-3x"></i>
-    <h5 class="font-weight-light">User Login</h5>
   </div>
-
-
-<div class="col-md-6 offset-md-3">
-
   <br><br><br>
 
 
+  <div class="row">
+    <div class="col">
+      <div class="card text-center zoom2">
+        <img class="card-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+             alt="Card image cap" style="height: 148px">
+        <div class="card-img-overlay" style="background: transparent">
+          <h5 class="card-title">
+            <br>
+            <h4 class="font-weight-light text-white font-weight-bold" style="text-overline-color: black">Trainer</h4>
+            <button   *ngIf="!auth.isAuthenticated()"
+                      (click)="auth.login()"
+                      class="btn btn-dark btn-block" style="opacity: 0.8">
+              Sign In / Sign Up
+            </button>
+          </h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card text-center zoom">
+        <img class="card-img" src="https://images.pexels.com/photos/685533/pexels-photo-685533.jpeg?cs=srgb&dl=athlete-crossfit-exercise-685533.jpg&fm=jpg"
+             alt="Card image cap" style="height: 148px">
+        <div class="card-img-overlay" style="background: transparent">
+          <h5 class="card-title">
+            <br>
+            <h4 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Coach</h4>
+            <button   *ngIf="!auth2.isAuthenticated()"
+                      (click)="auth2.login()"
+                      class="btn btn-dark btn-block" style="opacity: 0.8">
+              Sign In / Sign Up
+            </button>
+          </h5>
+        </div>
+      </div>
+    </div>
 
 
-  <br><br>
-  <button   *ngIf="!auth.isAuthenticated()"
-    (click)="auth.login()"
-          class="btn btn-dark btn-block" style="opacity: 0.8">
-    Sign In / Sign Up
-  </button>
+
+    <div class="col">
+      <div class="card text-center zoom">
+        <img class="card-img" src="https://images.pexels.com/photos/669576/pexels-photo-669576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+             alt="Card image cap" style="height: 148px">
+        <div class="card-img-overlay" style="background: transparent">
+          <h5 class="card-title">
+            <br>
+            <h4 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Admin</h4>
+            <button   routerLink="/admin"
+                      class="btn btn-dark btn-block" style="opacity: 0.8">
+              Admin Login
+            </button>
+          </h5>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+<div class="col-md-6 offset-md-3">
+
+<br>
+
 
   <button   *ngIf="auth.isAuthenticated()"
             (click)="auth.logout()"
@@ -36,26 +90,20 @@
 
   <div class="card" style="opacity: 0.4">
     <div class="card-body">
-      <h4 *ngIf="auth.isAuthenticated()"
-      style="color: black">
-        Signed in!
-      </h4>
-      <h4 *ngIf="!auth.isAuthenticated()"
-          style="color: black">
-        Please <a class="btn btn-dark text-white" (click)="auth.login()">sign In</a> to use this app. Thanks a lot :)
-      </h4>
+
+      <h6 *ngIf="!auth.isAuthenticated()" style="color: black">
+        Please also use Login of the Auth0 to Register.
+      </h6>
 
 
 
-      <h4 class="text-center">
-       --- Keeps Moving
-      </h4>
+
 
       <blockquote class="blockquote mb-0">
 
-        <footer class="blockquote-footer">Reminder
-          <cite title="Source Title">Please just use the Auth0's sign-in to register new accounts,
-          and don't use its sign up because it makes you have to sign up your email to create a new account</cite></footer>
+
+        <footer class="blockquote-footer"><i class="far fa-bell"></i>
+          <cite title="Source Title">You can also find main users in the user list below </cite></footer>
       </blockquote>
 
     </div>
@@ -68,18 +116,20 @@
 
   <nav class="navbar navbar-expand-lg navbar-light">
 
-    <ul class="navbar-nav">
+    <ul class="navbar-nav font-weight-bold">
 
 
       <li class="nav-item">
-        <a class="nav-link" style="color: black" routerLink="/home">Guest-Page</a>
+        <a class="nav-link" style="color: white; opacity: 0.6" routerLink="/home">Guest-Page</a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" style="color: black" routerLink="/admin">Admin-Login</a>
+        <a class="nav-link" style="color: white; opacity: 0.6" routerLink="/User-List">User-list</a>
       </li>
 
     </ul>
   </nav>
-  <div>
+  </div>
 
 </div>
+

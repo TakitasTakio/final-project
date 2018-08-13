@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {AuthService} from './auth/auth.service';
 import {CallbackComponent} from './callback/callback.component';
+import {Auth2Service} from './auth/auth2.service';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {CallbackComponent} from './callback/callback.component';
   ],
   providers: [
     AuthService,
+    Auth2Service,
 
   ],
   bootstrap: [AppComponent]

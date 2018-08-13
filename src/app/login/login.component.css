@@ -6,3 +6,30 @@
   background-position:70% 70%;
 
 }
+
+.zoom{
+
+  transition: transform .2s;
+  width: 220px;
+  height: 150px;
+
+  margin: 0 auto;
+}
+
+.zoom:hover{
+  transform: scale(1.5);
+}
+
+.zoom2{
+  transition: transform .2s;
+
+  width: 220px;
+  height: 150px;
+
+  margin: 0 auto;
+
+}
+
+.zoom2:hover{
+  transform: scale(1.5);
+}
