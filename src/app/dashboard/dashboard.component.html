@@ -1,3 +1,124 @@
-<p>
-  dashboard works!
-</p>
+<div class="jumbotron container-fluid" >
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+
+    <a routerLink="/admindash"
+       class="navbar-brand">Trainer</a>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a routerLink="/login"
+             class="nav-link">User SignIn/Up</a>
+        </li>
+
+
+
+
+
+        <li class="nav-item">
+          <a routerLink="#" class="nav-link">Add Course</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="#" class="nav-link">Know trainers</a>
+        </li>
+
+
+
+
+      </ul>
+    </div>
+
+
+
+    <form class="form-inline my-2 my-lg-0 float-right">
+
+      <i class="my-2 my-sm-0 text-white btn" (click)="logout()"><i class="fas fa-power-off"></i></i>
+    </form>
+
+
+
+  </nav>
+
+
+
+
+  <div class="col-md-4 offset-md-4">
+    <div class="card text-center zoom">
+      <img class="card-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+           alt="Card image cap" style="height: 230px">
+      <div class="card-img-overlay" style="background: transparent">
+
+
+        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Trainer Dashboard
+        </h1>
+        <div class="text-center">
+          <i class="fab fa-adn fa-5x fa-spin"></i>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-6 text-center">
+      <h2>
+        Profile
+      </h2>
+      <small class="font-weight-light">
+        Code: {{_id}}
+      </small>
+      <input [(ngModel)]="username"
+             placeholder="username"
+             class="form-control"/>
+
+      <input [(ngModel)]="password"
+             placeholder="password"
+             type="password"
+             class="form-control"/>
+
+
+
+
+      <input [(ngModel)]="email"
+             placeholder="Your email"
+             type="email"
+             class="form-control"/>
+      <br>
+
+      <button
+        class="btn btn-secondary btn-block">
+        Update
+      </button>
+      <div  class="alert alert-dark text-center font-weight-light" role="alert">
+        Confirm Your Info: Username: {{username}}
+        <br>
+
+        <br>
+        Email: {{email}}
+      </div>
+
+    </div>
+    &nbsp;
+
+    <div class="col-lg-5 text-center">
+      <h2>
+        Physical Info
+      </h2>
+
+
+    </div>
+
+  </div>
+
+
+
+
+</div>

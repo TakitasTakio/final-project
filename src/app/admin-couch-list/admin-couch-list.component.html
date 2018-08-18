@@ -1,0 +1,78 @@
+<h4>Couch Total: {{couchs.length}}</h4>
+<div class="row">
+  <div class="list-group col-sm-6">
+    <div *ngFor="let couch of couchs" class="list-group-item-info">
+      <div class="card border-secondary bg-info text-white">
+        <div class="card-body">
+          <h4 class="card-title">{{couch.username}}</h4>
+          <p class="card-text" >The user code: {{couch._id}}</p>
+
+          <a (click)="clickCouch(couch._id)" [ngClass] ="{'active': couch._id === selectedCouchId}"
+             class="btn btn-outline-dark">Trainer Info</a> &nbsp;
+          <br><br>
+          <a (click)="clickCouchforPrem2(couch._id)" [ngClass] ="{'active': couch._id === selectedCouchId}"
+
+             class="btn btn-outline-warning">Mark Premier</a>
+          <p class="card-text">
+            <small class="text-muted"><i class="fas fa-envelope"></i> {{couch.email}} </small>
+            <br/>
+
+
+          </p>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="card col-sm-6 bg-dark text-white">
+
+    <div *ngFor="let info2 of info2s">
+      <div class="card-body">
+
+        <h5 class="card-title"> Preview </h5>
+        <img  src="{{info2.image}}" class="container-fluid">
+        <h5 class="card-title"> First Name: {{info2.firstName}}</h5>
+        <h5 class="card-title"> Last Name: {{info2.lastName}} </h5>
+        <h5 class="card-text"
+        >Date of Birth: {{info2.birthDate | date}} </h5>
+        <br>
+        <h5 class="alert-info">Physical Info</h5>
+        <div class="card-text text-white">
+          <h5> Height: {{info2.height}} cm</h5>
+          <h5> Weight: {{info2.weight}} kg </h5>
+          <h5> Body Fat:  {{info2.bodyFat | percent}}</h5>
+
+
+
+          <br/>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title"> Premier Total :{{prem2s.length}} </h5>
+      <small class="card-text"> Please click Mark Premier then open premier, and just open for once</small>
+
+      <a (click)="openPrem2(selectedCouchId)"><i class="fab fa-product-hunt btn btn-light">Open Premier</i></a>
+      <div *ngFor="let prem2 of prem2s">
+
+        <h5>Premier Code:{{prem2._id}}</h5>
+        <a (click)="deletePrem2(prem2._id)"><i class="fas fa-user-times btn btn-light">Cancel Premier</i></a>
+      </div>
+      <br/>
+
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<h4>Trainer Total: {{users.length}}</h4>
+<div class="row">
+<div class="list-group col-sm-6">
+  <div *ngFor="let user of users" class="list-group-item-dark">
+    <div class="card border-secondary bg-dark text-white">
+      <div class="card-body">
+        <h4 class="card-title">{{user.username}}</h4>
+        <p class="card-text">The user code: {{user._id}}</p>
+
+        <a (click)="clickUser(user._id)" [ngClass] ="{'active': user._id === selectedUserId}"
+           class="btn btn-outline-info">Trainer Info</a> &nbsp;
+        <br><br>
+        <a  (click)="clickUserforPrem(user._id)" [ngClass] ="{'active': user._id === selectedUserId}"
+            class="btn btn-outline-success btn-dark">Mark Premier</a>
+        <p class="card-text">
+          <small class="text-muted"><i class="fas fa-envelope"></i> {{user.email}} </small>
+          <br/>
+
+
+        </p>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="card col-sm-6 bg-dark text-white">
+
+  <div *ngFor="let info of infos">
+    <div class="card-body">
+
+      <h5 class="card-title"> Preview </h5>
+      <img src="{{info.image}}" class="container-fluid">
+      <h5 class="card-title"> First Name: {{info.firstName}}</h5>
+      <h5 class="card-title"> Last Name:  {{info.lastName}}</h5>
+      <h5 class="card-text"
+      >Date of Birth: {{info.birthDate | date}}</h5>
+      <br>
+      <h5 class="alert-info">Physical Info</h5>
+      <div class="card-text text-white">
+        <h5> Height: {{info.height}} cm</h5>
+        <h5> Weight: {{info.weight}} kg </h5>
+        <h5> Body Fat: {{info.bodyFat | percent}} </h5>
+
+
+
+        <br/>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+
+  <div>
+    <div class="card-body">
+
+      <h5 class="card-title"> Premier Total :{{prems.length}} </h5>
+      <small class="card-text"> Please click Mark Premier then open premier, and just open for once</small>
+
+      <a (click)="openPrem(selectedUserId)"><i class="fab fa-product-hunt btn btn-light">Open Premier</i></a>
+      <div *ngFor="let prem of prems">
+        <h5>Prem Code:{{prem._id}}</h5>
+        <a (click)="deletePrem(prem._id)"><i class="fas fa-user-times btn btn-light">Cancel Premier</i></a>
+      </div>
+        <br/>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+

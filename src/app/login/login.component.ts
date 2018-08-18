@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
               public auth2: Auth2Service,
               ) {
     auth.handleAuthentication();
-    auth2.handleAuthentication()
+    auth2.handleAuthentication();
 
   }
 
