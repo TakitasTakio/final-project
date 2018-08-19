@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {InfoServiceUser} from '../services/info.service.user';
 import {Injectable} from '@angular/core';
 import {NewsServiceUser} from '../services/news.service.user';
+import {PremierServiceUser} from '../services/premier.service.user';
 
 @Injectable()
 
@@ -18,11 +19,13 @@ export class DashboardComponent implements OnInit {
   constructor(private service: TrainerLoginServiceUser,
               private router: Router,
               private serviceII: InfoServiceUser,
-              private serviceNews: NewsServiceUser) { }
+              private serviceNews: NewsServiceUser,
+              private servicePremier: PremierServiceUser) { }
 
   todayDate = new Date();
   user = {};
   storys = [];
+  prems = [];
   username;
   firstName;
   lastName;
@@ -72,6 +75,12 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  loadPrems(userId) {
+    this._id = userId;
+    this.servicePremier.findPremByUser(userId)
+      .then(prems => this.prems = prems);
+  }
+
   ngOnInit() {
     this.service
       .profile()
@@ -85,6 +94,8 @@ export class DashboardComponent implements OnInit {
 
     this.serviceNews.findAllPushedNews()
       .then(storys => this.storys = storys);
+
+
 
 
 

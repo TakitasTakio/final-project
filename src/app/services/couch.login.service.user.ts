@@ -2,14 +2,14 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 
-export class TrainerLoginServiceUser {
+export class CouchLoginServiceUser {
 
-  static login(username, password) {
+   static login(username, password) {
     const credentials = {
       username: username,
       password: password,
     };
-    return fetch('http://localhost:7000/api/user/login', {
+    return fetch('http://localhost:7000/api/couch/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -20,16 +20,23 @@ export class TrainerLoginServiceUser {
 
   }
 
-  createUser(username, password, email) {
-    const user = {
+  profile() {
+    return fetch('http://localhost:7000/api/couch/profile', {
+      credentials: 'include',
+    })
+      .then(response => response.json());
+  }
+
+  createCouch(username, password, email) {
+    const couch = {
       username: username,
       password: password,
       email: email,
 
     };
 
-    return fetch('http://localhost:7000/api/user', {
-      body: JSON.stringify(user),
+    return fetch('http://localhost:7000/api/couch', {
+      body: JSON.stringify(couch),
       credentials: 'include',
       method: 'post',
       headers: {
@@ -39,17 +46,10 @@ export class TrainerLoginServiceUser {
 
   }
 
-  profile() {
-    return fetch('http://localhost:7000/api/user/profile', {
-      credentials: 'include',
-    })
-      .then(response => response.json());
-  }
-
 
 
   logout() {
-    return fetch('http://localhost:7000/api/user/logout', {
+    return fetch('http://localhost:7000/api/couch/logout', {
       method: 'post',
       credentials: 'include',
     });

@@ -50,12 +50,12 @@
   <div class="col-md-4 offset-md-4">
     <div class="card text-center zoom">
       <img class="card-img"
-           src="https://images.pexels.com/photos/949132/pexels-photo-949132.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+           src="https://images.pexels.com/photos/949127/pexels-photo-949127.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
            alt="Card image cap" style="height: 230px">
       <div class="card-img-overlay" style="background: transparent">
 
 
-        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Coach, Meet ur trainees
+        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Coach Premier Service
         </h1>
         <div class="text-center">
           <i class="fab fa-adn fa-5x fa-spin"></i>
@@ -64,8 +64,7 @@
 
       </div>
     </div>
-    <h5 class="font-weight-light text-center">{{username}}, please create meeting and waiting
-      for the match selection from trainees and then you can check who would learn from you</h5>
+    <h5 class="font-weight-light text-center">{{username}}, you're free to register any no. of meetings</h5>
     <small class="font-weight-light text-center" [ngClass] ="{'active': _id === selectedCouchId}"
     > Coach Code: {{_id}}</small>
 
@@ -124,16 +123,6 @@
         </div>
 
       </div>
-      <div class="mb-8">
-        <input [(ngModel)]="date" type="datetime-local" class="form-control" placeholder="2018-08-10 10:00:00">
-        <input [(ngModel)]="location" type="text" class="form-control" placeholder="Marino Center, Boston">
-        <div>
-          <button  (click)="createMeeting(selectedLessonId, _id, date, location)" class="btn btn-dark btn-block" type="button" ><i class="far fa-plus-square">
-          Create Meeting
-          </i></button>
-
-        </div>
-      </div>
 
 
 
@@ -147,24 +136,24 @@
         Meeting
       </h2>
       <div *ngFor="let meeting of meetings" class="list-group-item-dark">
-        <div *ngIf="meetings.length<4" class="card border-secondary bg-dark text-white">
+        <div class="mb-8">
+          <input [(ngModel)]="date" type="datetime-local" class="form-control" placeholder="2018-08-10 10:00:00">
+          <input [(ngModel)]="location" type="text" class="form-control" placeholder="Marino Center, Boston">
+          <div>
+            <button  (click)="createMeeting(selectedLessonId, _id, date, location)" class="btn btn-dark btn-block" type="button" ><i class="far fa-plus-square">
+            </i></button>
+            <button  (click)="loadMatch(meeting._id)" class="btn btn-dark btn-block" type="button" ><i class="far fa-user font-weight-light"> Know your trainee (Below)
+            </i></button>
+          </div>
+        </div>
+        <br>
+        <div class="card border-secondary bg-dark text-white">
           <div class="card-body">
             <h4 class="card-title">{{meeting.date |date:'MM/dd/yyyy @ h:mma'}}</h4>
             <p class="card-text">Meeting code: {{meeting._id}}</p>
-            <button  (click)="loadMatch(meeting._id)" class="btn btn-outline-info btn-block" type="button" ><i class="far fa-user font-weight-light"> Know your trainee (Below)
-            </i></button>
             <p class="card-text font-weight-light">Location: {{meeting.location}}</p>
             <img width="600" height="450" frameborder="2" style="border:0" class="container-fluid"
-                     src= "https://maps.googleapis.com/maps/api/staticmap?center={{meeting.location}}&zoom=14&size=400x400&key=AIzaSyB-VLIXqDDDHL06xnjVdjAnQxYbhAa5opg">
-
-            <a (click)="deleteMeeting(selectedLessonId, meeting._id)"><i class="fa fa-trash btn btn-dark"></i></a>
-
-          </div>
-        </div>
-        <div *ngIf="meetings.length>=4" class="card border-secondary bg-dark text-white">
-          <div class="card-body">
-            <h5 class="font-weight-light">Sorry, you cannot regitser over 3 meetings here. Please delete unnecessary ones.
-              <i class="fas fa-lock"></i></h5>
+                 src= "https://maps.googleapis.com/maps/api/staticmap?center={{meeting.location}}&zoom=14&size=400x400&key=AIzaSyB-VLIXqDDDHL06xnjVdjAnQxYbhAa5opg">
 
             <a (click)="deleteMeeting(selectedLessonId, meeting._id)"><i class="fa fa-trash btn btn-dark"></i></a>
 
@@ -179,23 +168,23 @@
 
 
   </div>
-<br>
+  <br>
   <div class="row">
 
     <div class="col-lg-6">
-    <h2 class="font-weight-light">Your matched trainee {{matchs.length}}</h2>
-    <div *ngFor="let match of matchs" class="list-group-item-light">
-      <div class="card border-secondary bg-light text-black font-weight-light">
-        <div class="card-body">
-          <h4 class="card-title"> Trainee Code: {{match.user }}</h4>
-          <a (click)="loadInfo(match.user)" [ngClass] = "{'active': match.user === selectedUserId}"><i class="fa fa-user-circle btn btn-outline-dark">Info</i></a>
-          <p class="card-text">
-            Meeting code: {{match.meeting}}</p>
-          <h5 class="font-weight-light">Your match is confirmed</h5>
+      <h2 class="font-weight-light">Your matched trainee {{matchs.length}}</h2>
+      <div *ngFor="let match of matchs" class="list-group-item-light">
+        <div class="card border-secondary bg-light text-black font-weight-light">
+          <div class="card-body">
+            <h4 class="card-title"> Trainee Code: {{match.user }}</h4>
+            <a (click)="loadInfo(match.user)" [ngClass] = "{'active': match.user === selectedUserId}"><i class="fa fa-user-circle btn btn-outline-dark">Info</i></a>
+            <p class="card-text">
+              Meeting code: {{match.meeting}}</p>
+            <h5 class="font-weight-light">Your match is confirmed</h5>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
     <div class="col-lg-5">

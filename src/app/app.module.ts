@@ -35,6 +35,12 @@ import {LessonServiceUser} from './services/admin.lesson.set.service';
 import { NewsUpdateComponent } from './news-update/news-update.component';
 import {NewsServiceUser} from './services/news.service.user';
 import { GuestPageComponent } from './guest-page/guest-page.component';
+import {CouchLoginServiceUser} from './services/couch.login.service.user';
+import { CoachdashComponent } from './coachdash/coachdash.component';
+import {MeetingServiceUser} from './services/admin.meeting.set.service';
+import {MatchServiceUser} from './services/match.service.user';
+import { TrainerPremDashComponent } from './trainer-prem-dash/trainer-prem-dash.component';
+import { CouchPremDashComponent } from './couch-prem-dash/couch-prem-dash.component';
 
 
 @NgModule({
@@ -56,6 +62,9 @@ import { GuestPageComponent } from './guest-page/guest-page.component';
     AdminCsSetComponent,
     NewsUpdateComponent,
     GuestPageComponent,
+    CoachdashComponent,
+    TrainerPremDashComponent,
+    CouchPremDashComponent,
 
   ],
   imports: [
@@ -80,6 +89,9 @@ import { GuestPageComponent } from './guest-page/guest-page.component';
     UnitServiceUser,
     LessonServiceUser,
     NewsServiceUser,
+    CouchLoginServiceUser,
+    MeetingServiceUser,
+    MatchServiceUser,
   ],
   bootstrap: [AppComponent]
 })

@@ -50,12 +50,12 @@
   <div class="col-md-4 offset-md-4">
     <div class="card text-center zoom">
       <img class="card-img"
-           src="https://images.pexels.com/photos/669584/pexels-photo-669584.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+           src="https://images.pexels.com/photos/1092883/pexels-photo-1092883.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
            alt="Card image cap" style="height: 230px">
       <div class="card-img-overlay" style="background: transparent">
 
 
-        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Trainee, Set ur course
+        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Trainee Premier Service
         </h1>
         <div class="text-center">
           <i class="fab fa-adn fa-5x fa-spin"></i>
@@ -64,7 +64,7 @@
 
       </div>
     </div>
-    <h4 class="font-weight-light text-center">{{username}}</h4>
+    <h4 class="font-weight-light text-center">{{username}}, you're free to register more match times</h4>
     <small class="font-weight-light">{{_id}}</small>
   </div>
   <br>
@@ -133,8 +133,8 @@
             <p class="card-text">
               Meeting code: {{meeting._id}}</p>
             <a
-               class="btn btn-outline-info" (click)="clickCouch(meeting.couch)"
-               [ngClass] ="{'active': meeting.couch === selectedCouchId}">Coach Info (See below)</a>
+              class="btn btn-outline-info" (click)="clickCouch(meeting.couch)"
+              [ngClass] ="{'active': meeting.couch === selectedCouchId}">Coach Info (See below)</a>
             &nbsp;
             <a
               class="btn btn-outline-warning" (click)="loadMatch(meeting._id)"
@@ -160,52 +160,53 @@
 
   <div class="row">
 
-  <div class="col-lg-6 text-center">
-    <h2 class="font-weight-light"> Your Partner Coach Info</h2>
+    <div class="col-lg-6 text-center">
+      <h2 class="font-weight-light"> Your Partner Coach Info</h2>
 
-    <div *ngFor="let info2 of info2" class="list-group-item-dark">
-      <div class="card border-secondary bg-dark text-white">
-        <div class="card-body">
-          <img class="container-fluid" src="{{info2.image}}">
-          <h5 class="font-weight-light">  First Name: {{info2.firstName}} </h5>
-          <h5 class="font-weight-light">  Last Name: {{info2.lastName}} </h5>
-          <h5 class="font-weight-light">  Date of Birth: {{info2.birthDate | date}} </h5>
-          <h5 class="font-weight-light">  Height: {{info2.height}} cm</h5>
-          <h5 class="font-weight-light">  Weight: {{info2.weight}} kg</h5>
-          <h5 class="font-weight-light">  Body Fat: {{info2.bodyFat | percent}} </h5>
-          <small>Couch Code: {{selectedCouchId}}</small> <br>
-          <small>Available Meeting Code: {{selectedMeetingId}}</small>
+      <div *ngFor="let info2 of info2" class="list-group-item-dark">
+        <div class="card border-secondary bg-dark text-white">
+          <div class="card-body">
+            <img class="container-fluid" src="{{info2.image}}">
+            <h5 class="font-weight-light">  First Name: {{info2.firstName}} </h5>
+            <h5 class="font-weight-light">  Last Name: {{info2.lastName}} </h5>
+            <h5 class="font-weight-light">  Date of Birth: {{info2.birthDate | date}} </h5>
+            <h5 class="font-weight-light">  Height: {{info2.height}} cm</h5>
+            <h5 class="font-weight-light">  Weight: {{info2.weight}} kg</h5>
+            <h5 class="font-weight-light">  Body Fat: {{info2.bodyFat | percent}} </h5>
+            <small>Couch Code: {{selectedCouchId}}</small> <br>
+            <small>Available Meeting Code: {{selectedMeetingId}}</small>
 
-          <br>
-          <h5 class="font-weight-light">  Nutrition calculator </h5>
-          <h5 class="font-weight-light" style="color: hotpink">
-            Daily Calories: {{info2.weight*10+info2.height*6.25-150+5}} kcal </h5>
-          <h5 class="font-weight-light" style="color: hotpink">
-            Daily Protein: {{info2.weight*1.8}}  ~ {{info2.weight*2.5}} g </h5>
+            <br>
+            <h5 class="font-weight-light">  Nutrition calculator </h5>
+            <h5 class="font-weight-light" style="color: hotpink">
+              Daily Calories: {{info2.weight*10+info2.height*6.25-150+5}} kcal </h5>
+            <h5 class="font-weight-light" style="color: hotpink">
+              Daily Protein: {{info2.weight*1.8}}  ~ {{info2.weight*2.5}} g </h5>
 
-          <a
-            class="btn btn-outline-danger" (click)="createMatch(selectedMeetingId, selectedCouchId, _id)"
+            <a
+              class="btn btn-outline-danger" (click)="createMatch(selectedMeetingId, selectedCouchId, _id)"
 
-          >
-            Match</a>
+            >
+              Match</a>
 
-          <br>
-          <small class="font-weight-light">Please press Start Ur Match button at meeting card first and then match here</small>
+            <br>
+            <small class="font-weight-light">Please press Start Ur Match button at meeting card first and then match here</small>
 
 
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
     <div class="col-lg-6 text-center">
       <h2>Match {{matchs.length}}</h2>
+      <h6 class="font-weight-light">Matches means the follow-ups you would receive from our coach </h6>
       <div *ngFor="let match of matchs" class="list-group-item-light">
-        <div *ngIf="matchs.length<2"
-          class="card border-secondary bg-light text-black">
+        <div
+             class="card border-secondary bg-light text-black">
           <div class="card-body">
-            <h4 class="card-title"> Couch Code: {{match.couch }}</h4>
+            <h4 class="card-title"> Coach Code: {{match.couch }}</h4>
             <p class="card-text">
               Meeting code: {{match.meeting}}</p>
             <h5 class="font-weight-light">Your match is confirmed</h5>
@@ -217,19 +218,8 @@
           </div>
         </div>
 
-        <div *ngIf="matchs.length>=2"
-             class="card border-secondary bg-light text-black">
-          <div class="card-body">
 
-            <h5 class="font-weight-light">Sorry, you cannot regitser over 1 match here. Please delete unnecessary ones.
-              <i class="fas fa-lock"></i></h5>
 
-            <a (click)="deleteMatch(match.meeting, match._id)"><i class="fa fa-trash btn btn-outline-dark"></i></a>
-
-            <br><br>
-
-          </div>
-        </div>
       </div>
 
 
@@ -245,15 +235,3 @@
 
 
 </div>
-
-
-
-
-
-
-
-    &nbsp;
-
-
-
-

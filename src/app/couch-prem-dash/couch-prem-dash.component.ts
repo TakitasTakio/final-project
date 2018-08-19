@@ -10,11 +10,11 @@ import {MatchServiceUser} from '../services/match.service.user';
 import {InfoServiceUser} from '../services/info.service.user';
 
 @Component({
-  selector: 'app-couch-add-course',
-  templateUrl: './couch-add-course.component.html',
-  styleUrls: ['./couch-add-course.component.css']
+  selector: 'app-couch-prem-dash',
+  templateUrl: './couch-prem-dash.component.html',
+  styleUrls: ['./couch-prem-dash.component.css']
 })
-export class CouchAddCourseComponent implements OnInit {
+export class CouchPremDashComponent implements OnInit {
 
   constructor(
     private service: CouchLoginServiceUser,
@@ -26,6 +26,7 @@ export class CouchAddCourseComponent implements OnInit {
     private serviceMatch: MatchServiceUser,
     private serviceInfo: InfoServiceUser,
   ) { }
+
   selectedCourseId = 0;
   selectedUnitId = 0;
   selectedLessonId = 0;
@@ -122,6 +123,7 @@ export class CouchAddCourseComponent implements OnInit {
       .then(info => this.info = info);
 
   }
+
 
   ngOnInit() {
     this.serviceCourse.findAllCourses()

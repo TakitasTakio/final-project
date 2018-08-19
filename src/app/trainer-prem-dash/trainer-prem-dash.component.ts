@@ -9,13 +9,12 @@ import {MeetingServiceUser} from '../services/admin.meeting.set.service';
 import {Info2ServiceUser} from '../services/info2.service.user';
 import {MatchServiceUser} from '../services/match.service.user';
 
-
 @Component({
-  selector: 'app-trainer-add-course',
-  templateUrl: './trainer-add-course.component.html',
-  styleUrls: ['./trainer-add-course.component.css']
+  selector: 'app-trainer-prem-dash',
+  templateUrl: './trainer-prem-dash.component.html',
+  styleUrls: ['./trainer-prem-dash.component.css']
 })
-export class TrainerAddCourseComponent implements OnInit {
+export class TrainerPremDashComponent implements OnInit {
 
   constructor(private service: TrainerLoginServiceUser,
               private router: Router,
@@ -24,8 +23,8 @@ export class TrainerAddCourseComponent implements OnInit {
               private serviceLesson: LessonServiceUser,
               private serviceMeeting: MeetingServiceUser,
               private serviceII: Info2ServiceUser,
-              private serviceMatch: MatchServiceUser,
-              ) { }
+              private serviceMatch: MatchServiceUser) { }
+
   selectedCourseId = 0;
   selectedUnitId = 0;
   selectedLessonId = 0;

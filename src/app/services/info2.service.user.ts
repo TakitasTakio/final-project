@@ -6,10 +6,11 @@ export class Info2ServiceUser {
     return fetch(this.INFO2_URL.replace('CID', couchId))
       .then(response => response.json());
   }
-  createInfo2(couch, firstName) {
+  createInfo2(couch, firstName, lastName, birthDate, height, weight, bodyFat, image) {
     const info2 = {
       couch,
       firstName,
+      lastName, birthDate, height, weight, bodyFat, image
     };
     return fetch(this.INFO2_URL.replace('CID', couch), {
         method: 'post',

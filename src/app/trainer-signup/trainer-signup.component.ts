@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
+import {TrainerLoginServiceUser} from '../services/trainer.login.service.user';
+import {Router} from '@angular/router';
+
+
+
+
+@Injectable()
 
 @Component({
   selector: 'app-trainer-signup',
@@ -7,7 +14,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerSignupComponent implements OnInit {
 
-  constructor() { }
+  username;
+  password;
+  email;
+
+  constructor(private service: TrainerLoginServiceUser,
+              private router: Router) { }
+
+  signup(username, password, email) {
+    this.service.createUser(username, password, email)
+      .then( () => this.router.navigate(['dash']));
+  }
 
   ngOnInit() {
   }

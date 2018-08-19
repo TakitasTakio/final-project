@@ -13,6 +13,9 @@ import {CouchAddCourseComponent} from './couch-add-course/couch-add-course.compo
 import {AdminCsSetComponent} from './admin-cs-set/admin-cs-set.component';
 import {NewsUpdateComponent} from './news-update/news-update.component';
 import {GuestPageComponent} from './guest-page/guest-page.component';
+import {CoachdashComponent} from './coachdash/coachdash.component';
+import {TrainerPremDashComponent} from './trainer-prem-dash/trainer-prem-dash.component';
+import {CouchPremDashComponent} from './couch-prem-dash/couch-prem-dash.component';
 
 
 const appRoutes: Routes = [
@@ -27,7 +30,10 @@ const appRoutes: Routes = [
   {path: 'couchaddcourse', component: CouchAddCourseComponent},
   {path: 'couchlogin', component: CouchLoginComponent},
   {path: 'couchsignup', component: CouchSignupComponent},
+  {path: 'couchdash', component: CoachdashComponent},
   {path: 'login', component: LoginComponent },
+  {path: 'trainerpremier', component: TrainerPremDashComponent},
+  {path: 'couchpremier', component: CouchPremDashComponent},
   {path: 'guest', component: GuestPageComponent},
   {path: 'dash', component: DashboardComponent},
   {path: 'callback', component: CallbackComponent},

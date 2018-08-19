@@ -4,8 +4,8 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 
 
-    <a routerLink="/dash"
-       class="navbar-brand">Trainee</a>
+    <a routerLink="/couchdash"
+       class="navbar-brand">Coach</a>
 
 
 
@@ -22,7 +22,7 @@
 
 
         <li class="nav-item">
-          <a routerLink="/traineraddcourse" class="nav-link">Add Course</a>
+          <a routerLink="/couchaddcourse" class="nav-link">Add Course</a>
         </li>
 
 
@@ -49,12 +49,12 @@
 
   <div class="col-md-4 offset-md-4">
     <div class="card text-center zoom">
-      <img class="card-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      <img class="card-img" src="https://images.pexels.com/photos/841135/pexels-photo-841135.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
            alt="Card image cap" style="height: 230px">
       <div class="card-img-overlay" style="background: transparent">
 
 
-        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Trainee Dashboard
+        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Coach Dashboard
         </h1>
         <div class="text-center">
           <i class="fab fa-adn fa-5x fa-spin"></i>
@@ -82,8 +82,8 @@
              class="form-control"/>
       <br>
 
-      <button (click)="clickUser(_id)" [ngClass] ="{'active': _id === selectedUserId}"
-        class="btn btn-secondary btn-block">
+      <button (click)="clickCouch(_id)" [ngClass] ="{'active': _id === selectedCouchId}"
+              class="btn btn-secondary btn-block">
         Check Physical Info
       </button>
       <div  class="alert alert-dark text-center font-weight-light" role="alert">
@@ -123,7 +123,7 @@
              placeholder="image url"
              class="form-control"/>
       <button
-        (click)="createInfo(_id, firstName,lastName, birthDate, height, weight, bodyFat, image)"
+        (click)="createInfo2(_id, firstName,lastName, birthDate, height, weight, bodyFat, image)"
         class="btn btn-outline-dark" >Eidt</button>
 
 
@@ -136,23 +136,23 @@
       <h2>
         Physical Info
       </h2>
-      <div *ngFor="let info of info"
-        class="alert alert-dark text-center font-weight-light container-fluid" role="alert">
-            <img class="container-fluid" src="{{info.image}}">
-        <h5 class="font-weight-light">  First Name: {{info.firstName}} </h5>
-        <h5 class="font-weight-light">  Last Name: {{info.lastName}} </h5>
-        <h5 class="font-weight-light">  Date of Birth: {{info.birthDate | date}} </h5>
-        <h5 class="font-weight-light">  Height: {{info.height}} cm</h5>
-        <h5 class="font-weight-light">  Weight: {{info.weight}} kg</h5>
-        <h5 class="font-weight-light">  Body Fat: {{info.bodyFat | percent}} </h5>
+      <div *ngFor="let info2 of info2"
+           class="alert alert-dark text-center font-weight-light container-fluid" role="alert">
+        <img class="container-fluid" src="{{info2.image}}">
+        <h5 class="font-weight-light">  First Name: {{info2.firstName}} </h5>
+        <h5 class="font-weight-light">  Last Name: {{info2.lastName}} </h5>
+        <h5 class="font-weight-light">  Date of Birth: {{info2.birthDate | date}} </h5>
+        <h5 class="font-weight-light">  Height: {{info2.height}} cm</h5>
+        <h5 class="font-weight-light">  Weight: {{info2.weight}} kg</h5>
+        <h5 class="font-weight-light">  Body Fat: {{info2.bodyFat | percent}} </h5>
         <br>
         <h5 class="font-weight-light">  Nutrition calculator </h5>
         <h5 class="font-weight-light" style="color: hotpink">
-          Daily Calories: {{info.weight*10+info.height*6.25-150+5}} kcal </h5>
+          Daily Calories: {{info2.weight*10+info2.height*6.25-150+5}} kcal </h5>
         <h5 class="font-weight-light" style="color: hotpink">
-          Daily Protein: {{info.weight*1.8}}  ~ {{info.weight*2.5}} g </h5>
+          Daily Protein: {{info2.weight*1.8}}  ~ {{info2.weight*2.5}} g </h5>
 
-        <a><i (click)="deleteInfo(_id,info._id)" class="fa fa-trash btn btn-outline-dark"></i></a>
+        <a><i (click)="deleteInfo2(_id,info2._id)" class="fa fa-trash btn btn-outline-dark"></i></a>
 
 
 
@@ -168,24 +168,24 @@
   </div>
 
 
-    <h2 class="font-weight-light text-center"> NewsFeed
-    </h2>
+  <h2 class="font-weight-light text-center"> NewsFeed
+  </h2>
   <h4 class="font-weight-light text-center">Today {{todayDate |date}}</h4>
   <div class="card-columns" >
     <div class="card" *ngFor="let story of storys">
       <div class="border-secondary bg-dark text-white">
-          <div class="card-body" >
-            <img class="card-img-top" src="{{story.urlToImage}}"
-                 alt="Card image cap">
-            <h4 class="card-title">{{story.title}}</h4>
-            <p class="card-text">Source: {{story.author}}</p>
-            <a class="btn btn-light text-dark" href="{{story.url}}" target="_blank"> Full Text
-            </a> &nbsp;
-            <p class="card-text"><small class="text-muted">Updated at {{story.publishedAt |date}}</small></p>
+        <div class="card-body" >
+          <img class="card-img-top" src="{{story.urlToImage}}"
+               alt="Card image cap">
+          <h4 class="card-title">{{story.title}}</h4>
+          <p class="card-text">Source: {{story.author}}</p>
+          <a class="btn btn-light text-dark" href="{{story.url}}" target="_blank"> Full Text
+          </a> &nbsp;
+          <p class="card-text"><small class="text-muted">Updated at {{story.publishedAt |date}}</small></p>
 
 
-          </div>
         </div>
+      </div>
 
 
     </div>
@@ -196,25 +196,26 @@
     <a class="font-weight-light btn btn-outline-info"
        (click)="loadPrems(_id)"
     >Check Premier Plan</a>
-    <div *ngFor="let prem of prems">
-    <div *ngIf="prems.length == 0">
-      <h4 class="font-weight-light">Sorry, the admin doesn't turn on your premier plan, please contact admin
-        <i class="fas fa-lock"></i>
-      </h4>
-    </div>
-    <div *ngIf="prems.length>=1">
-      <h4 class="font-weight-light">Congratulations, you are our premier user <i class="fa fa-heart"></i>
-      </h4>
-      <br>
-      <a routerLink="/trainerpremier"
-        class="font-weight-light btn btn-outline-info">
-        <i class="fas fa-door-open"></i> your premier service</a>
-    </div>
+    <div *ngFor="let prem2 of prem2s">
+      <div *ngIf="prem2s.length<1">
+        <h4 class="font-weight-light">Sorry, the admin doesn't turn on your premier plan, please contact admin
+          <i class="fas fa-lock"></i>
+        </h4>
+      </div>
+      <div *ngIf="prem2s.length>=1">
+        <h4 class="font-weight-light">Congratulations, you are our premier user <i class="fa fa-heart"></i>
+        </h4>
+        <br>
+        <a routerLink="/couchpremier"
+           class="font-weight-light btn btn-outline-info">
+          <i class="fas fa-door-open"></i> your premier service</a>
+      </div>
 
     </div>
 
 
   </div>
+
 
 
 
