@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 
 export class NewsServiceUser {
   NEWS_URL = 'https://newsapi.org/v2/everything?q=fitness&language=en&sortBy=publishedAt&apiKey=742df388eea4446bb3599c7cee9a5602';
-  PUSH_URL = 'http://localhost:7000/api/news';
+  PUSH_URL = 'https://node-project-final-server-sw.herokuapp.com/api/news';
 
   findAllNews() {
     return fetch(this.NEWS_URL)

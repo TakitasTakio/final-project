@@ -9,7 +9,7 @@ export class AdminLoginServiceUser {
       username: username,
       password: password,
     };
-    return fetch('http://localhost:7000/api/admin/login', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/admin/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -21,7 +21,7 @@ export class AdminLoginServiceUser {
   }
 
   profile() {
-    return fetch('http://localhost:7000/api/admin/profile', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/admin/profile', {
       credentials: 'include',
     })
       .then(response => response.json());
@@ -30,7 +30,7 @@ export class AdminLoginServiceUser {
 
 
    logout() {
-    return fetch('http://localhost:7000/api/admin/logout', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/admin/logout', {
       method: 'post',
       credentials: 'include',
     });

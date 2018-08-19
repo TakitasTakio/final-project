@@ -9,7 +9,7 @@ export class TrainerLoginServiceUser {
       username: username,
       password: password,
     };
-    return fetch('http://localhost:7000/api/user/login', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/user/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -28,7 +28,7 @@ export class TrainerLoginServiceUser {
 
     };
 
-    return fetch('http://localhost:7000/api/user', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/user', {
       body: JSON.stringify(user),
       credentials: 'include',
       method: 'post',
@@ -40,7 +40,7 @@ export class TrainerLoginServiceUser {
   }
 
   profile() {
-    return fetch('http://localhost:7000/api/user/profile', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/user/profile', {
       credentials: 'include',
     })
       .then(response => response.json());
@@ -49,7 +49,7 @@ export class TrainerLoginServiceUser {
 
 
   logout() {
-    return fetch('http://localhost:7000/api/user/logout', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/user/logout', {
       method: 'post',
       credentials: 'include',
     });

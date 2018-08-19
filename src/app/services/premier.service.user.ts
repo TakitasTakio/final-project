@@ -1,6 +1,6 @@
 export class PremierServiceUser {
 
-  P_URL = 'http://localhost:7000/api/user/UID/premier';
+  P_URL = 'https://node-project-final-server-sw.herokuapp.com/api/user/UID/premier';
 
   findPremByUser(userId) {
     return fetch(this.P_URL.replace('UID', userId))

@@ -9,7 +9,7 @@ export class CouchLoginServiceUser {
       username: username,
       password: password,
     };
-    return fetch('http://localhost:7000/api/couch/login', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/couch/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -21,7 +21,7 @@ export class CouchLoginServiceUser {
   }
 
   profile() {
-    return fetch('http://localhost:7000/api/couch/profile', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/couch/profile', {
       credentials: 'include',
     })
       .then(response => response.json());
@@ -35,7 +35,7 @@ export class CouchLoginServiceUser {
 
     };
 
-    return fetch('http://localhost:7000/api/couch', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/couch', {
       body: JSON.stringify(couch),
       credentials: 'include',
       method: 'post',
@@ -49,7 +49,7 @@ export class CouchLoginServiceUser {
 
 
   logout() {
-    return fetch('http://localhost:7000/api/couch/logout', {
+    return fetch('https://node-project-final-server-sw.herokuapp.com/api/couch/logout', {
       method: 'post',
       credentials: 'include',
     });

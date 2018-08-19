@@ -1,6 +1,6 @@
 export class MatchServiceUser {
 
-  CON_URL = 'http://localhost:7000/api/meeting/MID/match';
+  CON_URL = 'https://node-project-final-server-sw.herokuapp.com/api/meeting/MID/match';
 
 
   findMatchByMeeting(meetingId) {

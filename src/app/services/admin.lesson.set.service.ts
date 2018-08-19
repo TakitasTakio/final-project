@@ -1,7 +1,7 @@
 export class LessonServiceUser {
 
 
-  UNIT_URL = 'http://localhost:7000/api/unit/UID/lesson';
+  UNIT_URL = 'https://node-project-final-server-sw.herokuapp.com/api/unit/UID/lesson';
 
   findLessonByModule(unitId) {
     return fetch(this.UNIT_URL.replace('UID', unitId))

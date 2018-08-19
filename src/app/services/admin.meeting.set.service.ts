@@ -1,6 +1,6 @@
 export class MeetingServiceUser {
 
-  CON_URL = 'http://localhost:7000/api/lesson/LID/meeting';
+  CON_URL = 'https://node-project-final-server-sw.herokuapp.com/api/lesson/LID/meeting';
 
 
   findMeetingByLesson(lessonId) {

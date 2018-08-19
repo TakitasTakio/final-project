@@ -1,6 +1,6 @@
 export class UnitServiceUser {
 
-  MOD_URL = 'http://localhost:7000/api/course/CID/unit';
+  MOD_URL = 'https://node-project-final-server-sw.herokuapp.com/api/course/CID/unit';
 
   findModuleByCourse(courseId) {
     return fetch(this.MOD_URL.replace('CID', courseId))

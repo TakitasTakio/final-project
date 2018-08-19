@@ -1,6 +1,6 @@
 export class Info2ServiceUser {
 
-  INFO2_URL = 'http://localhost:7000/api/couch/CID/info2';
+  INFO2_URL = 'https://node-project-final-server-sw.herokuapp.com/api/couch/CID/info2';
 
   findInfo2ByCouch(couchId) {
     return fetch(this.INFO2_URL.replace('CID', couchId))

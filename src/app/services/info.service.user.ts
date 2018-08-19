@@ -1,6 +1,6 @@
 export class InfoServiceUser {
 
-  INFO_URL = 'http://localhost:7000/api/user/UID/info';
+  INFO_URL = 'https://node-project-final-server-sw.herokuapp.com/api/user/UID/info';
 
   findInfoByUser(userId) {
     return fetch(this.INFO_URL.replace('UID', userId))

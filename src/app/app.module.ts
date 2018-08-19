@@ -41,6 +41,7 @@ import {MeetingServiceUser} from './services/admin.meeting.set.service';
 import {MatchServiceUser} from './services/match.service.user';
 import { TrainerPremDashComponent } from './trainer-prem-dash/trainer-prem-dash.component';
 import { CouchPremDashComponent } from './couch-prem-dash/couch-prem-dash.component';
+import { UserListForViewComponent } from './user-list-for-view/user-list-for-view.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { CouchPremDashComponent } from './couch-prem-dash/couch-prem-dash.compon
     CoachdashComponent,
     TrainerPremDashComponent,
     CouchPremDashComponent,
+    UserListForViewComponent,
 
   ],
   imports: [

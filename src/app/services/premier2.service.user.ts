@@ -1,6 +1,6 @@
 export class Premier2ServiceUser {
 
-  P_URL = 'http://localhost:7000/api/couch/CID/premier';
+  P_URL = 'https://node-project-final-server-sw.herokuapp.com/api/couch/CID/premier';
 
   findPrem2ByUser(couchId) {
     return fetch(this.P_URL.replace('CID', couchId))

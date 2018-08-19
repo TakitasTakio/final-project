@@ -16,6 +16,7 @@ import {GuestPageComponent} from './guest-page/guest-page.component';
 import {CoachdashComponent} from './coachdash/coachdash.component';
 import {TrainerPremDashComponent} from './trainer-prem-dash/trainer-prem-dash.component';
 import {CouchPremDashComponent} from './couch-prem-dash/couch-prem-dash.component';
+import {UserListForViewComponent} from './user-list-for-view/user-list-for-view.component';
 
 
 const appRoutes: Routes = [
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   {path: 'trainerpremier', component: TrainerPremDashComponent},
   {path: 'couchpremier', component: CouchPremDashComponent},
   {path: 'guest', component: GuestPageComponent},
+  {path: 'userlist', component: UserListForViewComponent},
   {path: 'dash', component: DashboardComponent},
   {path: 'callback', component: CallbackComponent},
   { path: '**', redirectTo: '' },
