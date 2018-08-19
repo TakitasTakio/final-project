@@ -1,0 +1,145 @@
+<div class="jumbotron container-fluid" >
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+
+    <a routerLink="/admindash"
+       class="navbar-brand">Admin</a>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a routerLink="/login"
+             class="nav-link">User SignIn/Up</a>
+        </li>
+
+
+
+
+
+        <li class="nav-item">
+          <a routerLink="/adminset" class="nav-link">Course Management</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/adminnews" class="nav-link">News Update</a>
+        </li>
+
+
+
+
+      </ul>
+    </div>
+
+
+
+    <form class="form-inline my-2 my-lg-0 float-right">
+
+      <i class="my-2 my-sm-0 text-white btn" (click)="logout()"><i class="fas fa-power-off"></i></i>
+    </form>
+
+
+
+  </nav>
+
+
+
+
+  <div class="col-md-4 offset-md-4">
+    <div class="card text-center zoom">
+      <img class="card-img" src="https://images.pexels.com/photos/669576/pexels-photo-669576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+           alt="Card image cap" style="height: 230px">
+      <div class="card-img-overlay" style="background: transparent">
+
+
+        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">News Push Admin
+        </h1>
+        <div class="text-center">
+          <i class="fab fa-adn fa-5x fa-spin"></i>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+
+    <div class="list-group col-sm-5 text-center">
+
+      <h2 class="font-weight-light">  Automatically selected fitness stories. Total {{news.articles.length}} </h2>
+      <div class="input-group mb-3">
+      <input [(ngModel)]="topic" type="text" class="form-control" placeholder="Search for another topic">
+        <div class="input-group-append">
+          <button (click)="searchTopic(topic)" class="btn btn-dark" type="button" ><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+      <div *ngFor="let article of news.articles" class="list-group-item-dark">
+        <div class="card border-secondary bg-dark text-white">
+          <div class="card-body">
+            <img class="card-img-top" src="{{article.urlToImage}}"
+                 alt="Card image cap">
+            <h4 class="card-title">{{article.title}}</h4>
+            <p class="card-text">Source: {{article.author}}</p>
+
+            <a (click)="createNews(article.title, article.author, article.url, article.urlToImage,
+            article.publishedAt)" [ngClass] ="{'active': article.title === selectedNewsTitle}"
+
+              class="btn btn-outline-info">Select To Push</a> &nbsp;
+            <a class="btn btn-light text-dark" href="{{article.url}}" target="_blank"> Full Text
+            </a> &nbsp;
+            <p class="card-text"><small class="text-muted">Updated at {{article.publishedAt |date}}</small></p>
+
+
+          </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    &nbsp;
+
+    <div class="col-sm-5 list-group text-center offset-1" >
+      <h2 class="font-weight-light text-center offset-2">  Selected to Push (Accessible to everyone)
+     Total: {{storys.length}}
+      </h2>
+      <div *ngFor="let story of storys" class="list-group-item-dark">
+        <div class="card border-secondary bg-dark text-white">
+          <div class="card-body">
+            <img class="card-img-top" src="{{story.urlToImage}}"
+                 alt="Card image cap">
+            <h4 class="card-title">{{story.title}}</h4>
+            <p class="card-text">Source: {{story.author}}</p>
+            <a class="btn btn-light text-dark" href="{{story.url}}" target="_blank"> Full Text
+            </a> &nbsp;
+            <a class="btn btn-light text-dark" (click)="deleteNews(story._id)"
+               [ngClass] ="{'active': story._id === selectedStoryId}" > <i class="fa fa-trash"></i>
+            </a> &nbsp;
+
+            <p class="card-text"><small class="text-muted">Updated at {{story.publishedAt |date}}</small></p>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</div>

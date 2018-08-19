@@ -1,0 +1,161 @@
+<div class="jumbotron container-fluid" >
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+
+    <a routerLink="/admindash"
+       class="navbar-brand">Admin</a>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <li class="nav-item">
+          <a routerLink="/login"
+             class="nav-link">User SignIn/Up</a>
+        </li>
+
+
+
+
+
+        <li class="nav-item">
+          <a routerLink="/adminset" class="nav-link">Course Management</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/adminnews" class="nav-link">News Update</a>
+        </li>
+
+
+
+
+      </ul>
+    </div>
+
+
+
+    <form class="form-inline my-2 my-lg-0 float-right">
+
+      <i class="my-2 my-sm-0 text-white btn" (click)="logout()"><i class="fas fa-power-off"></i></i>
+    </form>
+
+
+
+  </nav>
+
+
+
+
+  <div class="col-md-4 offset-md-4">
+    <div class="card text-center zoom">
+      <img class="card-img" src="https://images.pexels.com/photos/669576/pexels-photo-669576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+           alt="Card image cap" style="height: 230px">
+      <div class="card-img-overlay" style="background: transparent">
+
+
+        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Admin Course Panel
+        </h1>
+        <div class="text-center">
+          <i class="fab fa-adn fa-5x fa-spin"></i>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+
+    <div class="list-group col-sm-4 text-center">
+      <h2 class="font-weight-light">
+        Course Total: {{courses.length}}
+      </h2>
+      <div *ngFor="let course of courses" class="list-group-item-dark">
+        <div class="card border-secondary bg-dark text-white">
+          <div class="card-body">
+            <h4 class="card-title">{{course.title}}</h4>
+            <p class="card-text">Course code: {{course._id}}</p>
+
+            <a (click)="selectCourse(course._id)" [ngClass] ="{'active': course._id === selectedCourseId}"
+               class="btn btn-outline-info">Check Unit</a> &nbsp;
+
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    &nbsp;
+
+    <div class="col-sm-4 list-group text-center" >
+      <h2 class="font-weight-light">
+        Unit Total {{units.length}}
+      </h2>
+      <div class="input-group mb-3">
+        <input [(ngModel)]="unitTitle" type="text" class="form-control" placeholder="Add this course's UNIT">
+        <div class="input-group-append">
+          <button  (click)="createUnit(selectedCourseId, unitTitle)" class="btn btn-dark" type="button" ><i class="far fa-plus-square"></i></button>
+        </div>
+      </div>
+      <div *ngFor="let unit of units" class="list-group-item-light">
+        <div class="card border-secondary bg-light text-black">
+          <div class="card-body">
+            <h4 class="card-title">{{unit.title}}</h4>
+            <p class="card-text">Unit code: {{unit._id}}</p>
+
+            <a (click)="clickUnit(unit._id)" [ngClass] ="{'active': unit._id === selectedUnitId}"
+               class="btn btn-outline-info">Check Lesson</a> &nbsp;
+            <a (click)="deleteUnit(selectedCourseId,unit._id)" [ngClass] ="{'active': unit._id === selectedUnitId}"
+               class="btn btn-outline-info"><i class="fa fa-trash"></i></a> &nbsp;
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-3 text-center">
+      <h2 class="font-weight-light">
+        Lesson Total {{lessons.length}}
+      </h2>
+      <div class="input-group mb-3">
+        <input [(ngModel)]="lessonTitle" type="text" class="form-control" placeholder="Add this unit's LESSON">
+        <div class="input-group-append">
+          <button  (click)="createLesson(selectedUnitId, lessonTitle)" class="btn btn-dark" type="button" ><i class="far fa-plus-square"></i></button>
+        </div>
+      </div>
+      <div *ngFor="let lesson of lessons" class="list-group-item-dark">
+        <div class="card border-secondary bg-dark text-white">
+          <div class="card-body">
+            <h4 class="card-title">{{lesson.title}}</h4>
+            <p class="card-text">Lesson code: {{lesson._id}}</p>
+
+
+            <a (click)="deleteLesson(selectedUnitId,lesson._id)" [ngClass] ="{'active': lesson._id === selectedLessonId}"
+               class="btn btn-outline-info"><i class="fa fa-trash"></i></a> &nbsp;
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+

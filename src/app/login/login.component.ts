@@ -10,6 +10,7 @@ import {Auth2Service} from '../auth/auth2.service';
 })
 export class LoginComponent implements OnInit {
 
+  todayDate = new Date();
   constructor(public auth: AuthService,
               public auth2: Auth2Service,
               ) {

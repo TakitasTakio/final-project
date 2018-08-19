@@ -6,10 +6,16 @@ export class InfoServiceUser {
     return fetch(this.INFO_URL.replace('UID', userId))
       .then(response => response.json());
   }
-  createInfo(user, firstName) {
+  createInfo(user, firstName, lastName, birthDate, height, weight, bodyFat, image) {
     const info = {
       user,
       firstName,
+      lastName,
+      birthDate,
+      height,
+      weight,
+      bodyFat,
+      image
     };
     return fetch(this.INFO_URL.replace('UID', user), {
         method: 'post',

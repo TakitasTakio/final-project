@@ -1,0 +1,171 @@
+<div class="jumbotron container-fluid" >
+
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+
+    <a routerLink="/guest" class="navbar-brand text-white btn">Guest</a>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+        <li class="nav-item btn">
+          <a routerLink="/login"
+             class="nav-link">User SignIn/Up</a>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+
+
+
+    <form class="form-inline my-2 my-lg-0 float-right">
+
+      <i class="my-2 my-sm-0 text-white btn" routerLink="/login"><i class="fas fa-power-off"></i></i>
+    </form>
+
+
+
+  </nav>
+
+
+
+
+  <div class="col-md-4 offset-md-4">
+    <div class="card text-center zoom">
+      <img class="card-img" src="https://images.pexels.com/photos/949127/pexels-photo-949127.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+           alt="Card image cap" style="height: 230px">
+      <div class="card-img-overlay" style="background: transparent">
+
+
+        <h1 class="font-weight-light font-weight-bold text-white" style="text-overline-color: black">Guest Page
+        </h1>
+        <div class="text-center">
+          <i class="fab fa-adn fa-5x fa-spin"></i>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <br>
+
+
+    <div class="text-center">
+
+      <h2 class="font-weight-light"> NewsFeed
+          </h2>
+      <small class="font-weight-light">Today {{todayDate |date}}</small>
+
+      <div  class="container-fluid card-columns">
+        <div class="container-fluid">
+        <div class="card border-secondary bg-dark text-white" *ngFor="let story of storys">
+          <div class="card-body" >
+            <img class="card-img-top" src="{{story.urlToImage}}"
+                 alt="Card image cap">
+            <h4 class="card-title">{{story.title}}</h4>
+            <p class="card-text">Source: {{story.author}}</p>
+            <a class="btn btn-light text-dark" href="{{story.url}}" target="_blank"> Full Text
+            </a> &nbsp;
+            <p class="card-text"><small class="text-muted">Updated at {{story.publishedAt |date}}</small></p>
+
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class=" text-center">
+        <h2 class="font-weight-light"> Our Fitness Training Plan for You </h2>
+
+        <div class="row">
+
+          <div class="list-group col-sm-4 text-center">
+            <h2 class="font-weight-light">
+              Course Total: {{courses.length}}
+            </h2>
+            <div *ngFor="let course of courses" class="list-group-item-dark">
+              <div class="card border-secondary bg-dark text-white">
+                <div class="card-body">
+                  <h4 class="card-title">{{course.title}}</h4>
+                  <p class="card-text">Course code: {{course._id}}</p>
+
+                  <a (click)="selectCourse(course._id)" [ngClass] ="{'active': course._id === selectedCourseId}"
+                     class="btn btn-outline-info">Check Unit</a> &nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="list-group col-sm-4 text-center">
+            <h2 class="font-weight-light">
+              Unit Total: {{units.length}}
+            </h2>
+            <div *ngFor="let unit of units" class="list-group-item-light">
+              <div class="card border-secondary bg-light text-black-50">
+                <div class="card-body">
+                  <h4 class="card-title">{{unit.title}}</h4>
+                  <p class="card-text">Unit code: {{unit._id}}</p>
+
+                  <a (click)="clickUnit(unit._id)" [ngClass] ="{'active': unit._id === selectedUnitId}"
+                     class="btn btn-outline-info">Check Lesson</a> &nbsp;
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 text-center">
+            <h2 class="font-weight-light">
+              Lesson Total {{lessons.length}}
+            </h2>
+            <div *ngFor="let lesson of lessons" class="list-group-item-dark">
+              <div class="card border-secondary bg-dark text-white">
+                <div class="card-body">
+                  <h4 class="card-title">{{lesson.title}}</h4>
+                  <p class="card-text">Lesson code: {{lesson._id}}</p>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    &nbsp;
+
+
+
+  </div>
+
+
+
+
+

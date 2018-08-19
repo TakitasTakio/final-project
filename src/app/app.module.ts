@@ -26,6 +26,15 @@ import { CouchLoginComponent } from './couch-login/couch-login.component';
 import { TrainerSignupComponent } from './trainer-signup/trainer-signup.component';
 import { CouchSignupComponent } from './couch-signup/couch-signup.component';
 import {TrainerLoginServiceUser} from './services/trainer.login.service.user';
+import { TrainerAddCourseComponent } from './trainer-add-course/trainer-add-course.component';
+import { CouchAddCourseComponent } from './couch-add-course/couch-add-course.component';
+import { AdminCsSetComponent } from './admin-cs-set/admin-cs-set.component';
+import {CourseServiceUser} from './services/admin.cs.set.service';
+import {UnitServiceUser} from './services/admin.unit.set.service';
+import {LessonServiceUser} from './services/admin.lesson.set.service';
+import { NewsUpdateComponent } from './news-update/news-update.component';
+import {NewsServiceUser} from './services/news.service.user';
+import { GuestPageComponent } from './guest-page/guest-page.component';
 
 
 @NgModule({
@@ -42,6 +51,11 @@ import {TrainerLoginServiceUser} from './services/trainer.login.service.user';
     CouchLoginComponent,
     TrainerSignupComponent,
     CouchSignupComponent,
+    TrainerAddCourseComponent,
+    CouchAddCourseComponent,
+    AdminCsSetComponent,
+    NewsUpdateComponent,
+    GuestPageComponent,
 
   ],
   imports: [
@@ -62,6 +76,10 @@ import {TrainerLoginServiceUser} from './services/trainer.login.service.user';
     PremierServiceUser,
     Premier2ServiceUser,
     TrainerLoginServiceUser,
+    CourseServiceUser,
+    UnitServiceUser,
+    LessonServiceUser,
+    NewsServiceUser,
   ],
   bootstrap: [AppComponent]
 })
