@@ -1,8 +1,6 @@
 This repository is the project requirement file for our project sports and fitness workout management web application.
 
-Reminder:
 
-1.Please change localhost to heroku app in auth0-variables.ts
 
 
 # Final
