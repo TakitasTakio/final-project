@@ -5,7 +5,7 @@ This repository is the project requirement file for our project sports and fitne
 
 # Final
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This project was generated with using [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
 
