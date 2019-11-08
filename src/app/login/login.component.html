@@ -1,6 +1,7 @@
 <div class="jumbotron container-fluid image" style="height:100vh;">
   <div class="text-center">
-  <h1 class="text-center font-weight-bold" style="color: white;opacity: 0.85; text-shadow: 1px 1px #000000" >Hello, Amino Planet</h1>
+  <h1 class="text-center font-weight-bold" style="color: white;opacity: 0.85; text-shadow: 1px 1px #000000" >Amino Planet</h1>
+    <h1 class="text-center font-weight-bold rainbow-text" style="opacity: 1;" >LGBTQ+ Friendly Gym Platform</h1>
   </div>
   <br><br><br>
 
@@ -18,10 +19,9 @@
                       class="btn btn-dark btn-block" style="opacity: 0.8">
               Sign In
             </button>
-            <button   *ngIf="!auth.isAuthenticated()"
-                      (click)="auth.login()"
+            <button   routerLink="/trainersignup"
                       class="btn btn-dark btn-block" style="opacity: 0.8">
-              SNS Sign In/Up
+              Sign Up
             </button>
 
           </h5>
@@ -42,10 +42,9 @@
                       class="btn btn-dark btn-block" style="opacity: 0.8">
               Sign In
             </button>
-            <button   *ngIf="!auth2.isAuthenticated()"
-                      (click)="auth2.login()"
+            <button   routerLink="/couchsignup"
                       class="btn btn-dark btn-block" style="opacity: 0.8">
-              SNS Sign In/Up
+              Sign Up
             </button>
           </h5>
         </div>
@@ -94,29 +93,11 @@
 
   <br>
 
-  <div class="card" style="opacity: 0.4">
-    <div class="card-body">
 
-      <h6 *ngIf="!auth.isAuthenticated()" style="color: black">
-        Please also use Login of the Auth0 to Register.
-      </h6>
-
-
-
-
-
-      <blockquote class="blockquote mb-0">
-
-
-        <footer class="blockquote-footer"><i class="far fa-bell"></i>
-          <cite title="Source Title">You can also find main users in the user list below </cite></footer>
-      </blockquote>
-    </div>
-  </div>
 
  <br>
   <h4 class="font-weight-light text-white text-center" style="opacity: 0.7"
-  >Now {{todayDate |date:'MMM d, y, h:mm:ss a'}}</h4>
+  >Today {{todayDate |date:'MMM d, y'}}</h4>
 
 
 
