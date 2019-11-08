@@ -98,11 +98,25 @@
         Edit Physical Info
       </h4>
       <input [(ngModel)]="firstName"
-             placeholder="first name"
+             placeholder="Name"
              class="form-control"/>
-      <input [(ngModel)]="lastName"
-             placeholder="last name"
-             class="form-control"/>
+      <div class="input-group">
+        <select [(ngModel)]="lastName"
+                class="form-control">
+          <option selected>Interested In</option>
+          <option>Woman to Woman</option>
+          <option>Man to Man</option>
+          <option>Woman to Man</option>
+          <option>Man to Woman</option>
+          <option>Other</option>
+        </select>
+        <div class="input-group-append">
+          <label class="btn btn-outline-secondary" >Interested In</label>
+        </div>
+      </div>
+      <!--      <input [(ngModel)]="lastName"-->
+<!--             placeholder="last name"-->
+<!--             class="form-control"/>-->
       <input [(ngModel)]="birthDate"
              placeholder="date of birth"
              type="date"
@@ -139,8 +153,8 @@
       <div *ngFor="let info2 of info2"
            class="alert alert-dark text-center font-weight-light container-fluid" role="alert">
         <img class="container-fluid" src="{{info2.image}}">
-        <h5 class="font-weight-light">  First Name: {{info2.firstName}} </h5>
-        <h5 class="font-weight-light">  Last Name: {{info2.lastName}} </h5>
+        <h5 class="font-weight-light">  Name: {{info2.firstName}} </h5>
+        <h5 class="font-weight-light">  Interested in: {{info2.lastName}} </h5>
         <h5 class="font-weight-light">  Date of Birth: {{info2.birthDate | date}} </h5>
         <h5 class="font-weight-light">  Height: {{info2.height}} cm</h5>
         <h5 class="font-weight-light">  Weight: {{info2.weight}} kg</h5>
