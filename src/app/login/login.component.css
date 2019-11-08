@@ -16,9 +16,9 @@
   margin: 0 auto;
 }
 
-.zoom:hover{
-  transform: scale(1.5);
-}
+/*.zoom:hover{*/
+/*  transform: scale(1.5);*/
+/*}*/
 
 .zoom2{
   transition: transform .2s;
@@ -30,6 +30,12 @@
 
 }
 
-.zoom2:hover{
-  transform: scale(1.5);
+/*.zoom2:hover{*/
+/*  transform: scale(1.5);*/
+/*}*/
+
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, darkred, orange, red);
+  -webkit-background-clip: text;
+  color: transparent;
 }
